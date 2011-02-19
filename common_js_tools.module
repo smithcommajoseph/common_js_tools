@@ -1,8 +1,7 @@
 <?php
-// $Id: common_js_tools.module$
+// $Id: common_js_tools.module $
 
 /**
- * @file
  * Provides a wrapper for json2, jQuery BBQ and BA-debug ... and so on
  */
 include_once('./'. drupal_get_path('module', 'common_js_tools') .'/includes/common_js_tools.lib.inc');
@@ -41,7 +40,6 @@ function common_js_tools_init(){
 
     }
 }
-
 
 /**
  * Implements hook_menu()

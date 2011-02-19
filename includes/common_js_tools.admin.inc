@@ -1,8 +1,7 @@
 <?php
-// $Id$
+// $Id: common_js_tools.admin.inc $
 
 /**
- * @file
  * Administration page callbacks for the Common JS Tools module.
  */
 include_once('./'. drupal_get_path('module', 'common_js_tools') .'/includes/common_js_tools.lib.inc');

@@ -1,5 +1,9 @@
 <?php
+// $Id: common_js_tools.lib.inc $
 
+/**
+ * Check our chosen Directories for js Libs 
+ */
 function _common_js_tools_path($lib) {
   $jspath = FALSE;
   $module_path=drupal_get_path('module', 'common_js_tools');
@@ -22,8 +26,4 @@ function _common_js_tools_json($var = NULL) {
   if (isset($var)) {
     echo json_encode($var);
   }
-}
-
-function returnhi(){
-  return 'hi';
 }

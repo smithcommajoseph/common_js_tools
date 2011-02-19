@@ -1,4 +1,4 @@
-; $Id$
+; $Id common_js_tools.info $
 name = Common JS tools
 description = Provides wrapper for common Javascript libraries
 package = UI

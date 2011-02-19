@@ -1,4 +1,4 @@
-$Id$
+$Id README.txt $
 
 common_js_tools
 ===============
