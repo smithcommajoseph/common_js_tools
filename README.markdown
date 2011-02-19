@@ -26,7 +26,7 @@ JS libraries can go to one of two places
 
 - JSON2: https://github.com/douglascrockford/JSON-js
 - jQuery BBQ: http://benalman.com/projects/jquery-bbq-plugin/
-- BA-Debug:http://benalman.com/projects/javascript-debug-console-log/
+- BA-Debug: http://benalman.com/projects/javascript-debug-console-log/
 
 Usage
 =====
