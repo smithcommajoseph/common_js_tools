@@ -1,0 +1,12 @@
+<?php
+
+// function common_js_tools_install() {
+//     drupal_set_message('If you have not already done so, download...')
+// }
+
+function common_js_tools_uninstall() {
+  variable_del('common_js_tools_use_min');
+  variable_del('common_js_tools_jquery_ba-bbq');
+  variable_del('common_js_tools_json2');
+  variable_del('common_js_tools_ba-debug');
+}

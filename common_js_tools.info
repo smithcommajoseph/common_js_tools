@@ -1,0 +1,5 @@
+; $Id$
+name = Common JS tools
+description = Provides wrapper for common Javascript libraries
+package = UI
+core = 6.x

@@ -1,0 +1,60 @@
+<?php
+// $Id: common_js_tools.module$
+
+/**
+ * @file
+ * Provides a wrapper for json2, jQuery BBQ and BA-debug ... and so on
+ */
+include_once('./'. drupal_get_path('module', 'common_js_tools') .'/includes/common_js_tools.lib.inc');
+
+/**
+ * collection of libraries we are wrapping
+ */
+function common_js_tools_libs(){
+    $libs = array(
+      'json2' => 'JSON 2',
+      'jquery.ba-bbq' => 'jQuery BBQ',
+      'ba-debug' => 'BA debug'
+    );
+    
+    return $libs;
+}
+
+/** 
+ * Implements hook_init(). 
+ */
+function common_js_tools_init(){
+    $libs = common_js_tools_libs();
+    $format = (variable_get('common_js_tools_use_min', 0)) ? '.min' : '';
+    
+    foreach($libs as $k => $v){
+        $use = variable_get('common_js_tools_'.str_replace('.','_',$k), 0);
+        
+        if($use){
+            if(_common_js_tools_path($k.$format)) {
+                drupal_add_js(_common_js_tools_path($k.$format) . '/' . $k . $format . '.js', 'module');
+            }
+            elseif($format && _common_js_tools_path($k)) {
+                drupal_add_js(_common_js_tools_path($k) . '/' . $k . '.js', 'module');
+            } 
+        }
+
+    }
+}
+
+
+/**
+ * Implements hook_menu()
+ */
+function common_js_tools_menu(){
+    $items['admin/settings/common_js_tools'] = array(
+      'title' => 'Common JS Tools settings', 
+      'description' => 'Choose Which libraries you wish to enable.', 
+      'page callback' => 'drupal_get_form', 
+      'page arguments' => array('common_js_tools_admin_settings'), 
+      'access arguments' => array('administer site configuration'), 
+      'type' => MENU_NORMAL_ITEM, 
+      'file' => 'includes/common_js_tools.admin.inc',
+    ); 
+    return $items;
+}
