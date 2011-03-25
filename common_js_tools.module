@@ -26,15 +26,17 @@ function common_js_tools_init(){
     $libs = common_js_tools_libs();
     $format = (variable_get('common_js_tools_use_min', 0)) ? '.min' : '';
     
-    foreach($libs as $k => $v){
-        $use = variable_get('common_js_tools_'.str_replace('.','_',$k), 0);
+    foreach($libs as $lib => $title){
+        $use = variable_get('common_js_tools_'.str_replace('.','_',$lib), 0);
         
         if($use){
-            if(_common_js_tools_path($k.$format)) {
-                drupal_add_js(_common_js_tools_path($k.$format) . '/' . $k . $format . '.js', 'module');
+            //if we find the specified format (.min), use that.
+            if(_common_js_tools_path($lib.$format)) {
+                drupal_add_js(_common_js_tools_path($lib.$format) . '/' . $lib . $format . '.js', 'module');
             }
-            elseif($format && _common_js_tools_path($k)) {
-                drupal_add_js(_common_js_tools_path($k) . '/' . $k . '.js', 'module');
+            //otherwise, use the dev version if that exists.
+            elseif($format && _common_js_tools_path($lib)) {
+                drupal_add_js(_common_js_tools_path($lib) . '/' . $lib . '.js', 'module');
             } 
         }
 

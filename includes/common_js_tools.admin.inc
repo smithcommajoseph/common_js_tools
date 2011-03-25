@@ -22,14 +22,14 @@ function common_js_tools_admin_settings() {
   $form['libraries']['pre'] = array(
     '#value' => t('<div class="form-item"><label>Select the libraries you want to load. </label><table><thead><tr><th></th><th>Lib</th><th>Development</th><th>Minified</th></tr></thead><tbody>')
   );
-  foreach($libs as $k => $v){
-    $field_tmp = 'common_js_tools_'.str_replace('.','_',$k);
+  foreach($libs as $lib => $title){
+    $field_tmp = 'common_js_tools_'.str_replace('.','_',$lib);
     $form['libraries'][$field_tmp] = array(
       '#prefix' => '<tr><td>',
       '#type' => 'checkbox', 
       '#default_value' => variable_get($field_tmp, 0),
-      '#title' => t('</td><td>'.$v.'</td>'),
-      '#suffix' => t('<td>'.(_common_js_tools_path($k) ? '<span style=\'color:green\'>available' : '<span style=\'color:red\'>not available').'</span></td><td>'.(_common_js_tools_path($k.'.min') ? '<span style=\'color:green\'>available' : '<span style=\'color:red\'>not available').'</span></td></tr>')
+      '#title' => t('</td><td>'.$title.'</td>'),
+      '#suffix' => t('<td>'.(_common_js_tools_path($lib) ? '<span style=\'color:green\'>available' : '<span style=\'color:red\'>not available').'</span></td><td>'.(_common_js_tools_path($lib.'.min') ? '<span style=\'color:green\'>available' : '<span style=\'color:red\'>not available').'</span></td></tr>')
     );
   }
   $form['libraries']['post'] = array(
