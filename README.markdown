@@ -7,6 +7,7 @@ Provides a Drupal 6 wrapper to a few commonly used JS libraries.
 
 Currently Supported are.
 
+- Modernizr 1.7
 - JSON2
 - jQuery BBQ
 - BA-Debug
@@ -24,6 +25,7 @@ JS libraries can go to one of two places
 
 #####Locations
 
+- Modernizr: http://www.modernizr.com/
 - JSON2: https://github.com/douglascrockford/JSON-js
 - jQuery BBQ: http://benalman.com/projects/jquery-bbq-plugin/
 - BA-Debug: http://benalman.com/projects/javascript-debug-console-log/

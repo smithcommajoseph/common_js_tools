@@ -11,6 +11,7 @@ include_once('./'. drupal_get_path('module', 'common_js_tools') .'/includes/comm
  */
 function common_js_tools_libs(){
     $libs = array(
+      'modernizr-1.7' => 'Modernizr 1.7',
       'json2' => 'JSON 2',
       'jquery.ba-bbq' => 'jQuery BBQ',
       'ba-debug' => 'BA debug'
